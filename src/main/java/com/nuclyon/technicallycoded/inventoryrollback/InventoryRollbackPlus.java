@@ -54,19 +54,19 @@ public class InventoryRollbackPlus extends InventoryRollback {
         // Init NMS
         String serverVersion = this.getServer().getVersion();
         getLogger().info("Attempting support for version: " + serverVersion);
-        MCVersion mcVersion = MCVersion.fromServerVersion(serverVersion);
-        BukkitVersion nmsVersion = mcVersion.toBukkitVersion();
-        if (nmsVersion == null) {
-            getLogger().severe(MessageData.getPluginPrefix() + "\n" +
-                    " ** WARNING! IRP may not be compatible with this version of Minecraft. **\n" +
-                    " ** Please fully test the plugin before using on your server as features may be broken. **\n" +
-                    MessageData.getPluginPrefix()
-            );
-            setPackageVersion(BukkitVersion.getLatest().name());
-        } else {
-            setVersion(nmsVersion);
-            InventoryRollback.setPackageVersion(nmsVersion.name());
-        }
+        //MCVersion mcVersion = MCVersion.fromServerVersion(serverVersion);
+        //BukkitVersion nmsVersion = mcVersion.toBukkitVersion();
+        //if (nmsVersion == null) {
+        //    getLogger().severe(MessageData.getPluginPrefix() + "\n" +
+        //            " ** WARNING! IRP may not be compatible with this version of Minecraft. **\n" +
+        //            " ** Please fully test the plugin before using on your server as features may be broken. **\n" +
+        //            MessageData.getPluginPrefix()
+        //    );
+        //    setPackageVersion(BukkitVersion.getLatest().name());
+        //} else {
+            //setVersion(nmsVersion);
+            InventoryRollback.setPackageVersion("v1_21_R4");
+        //}
         getLogger().info("Using CraftBukkit version: " + getPackageVersion());
 
         // Storage Init & Update checker
